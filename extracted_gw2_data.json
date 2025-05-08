@@ -1,0 +1,2497 @@
+{
+  "Alchemical Goods.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bag of Alchemical Materials",
+      "id_placeholder": 9333,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 2135,
+    "result_items": [
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 117
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 120
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 134
+      },
+      {
+        "id": 24304,
+        "name": "Charged Core",
+        "quantity": 5
+      },
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 278
+      },
+      {
+        "id": 24356,
+        "name": "Large Fang",
+        "quantity": 108
+      },
+      {
+        "id": 24288,
+        "name": "Large Scale",
+        "quantity": 116
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 124
+      },
+      {
+        "id": 24283,
+        "name": "Powerful Venom Sac",
+        "quantity": 24
+      },
+      {
+        "id": 24282,
+        "name": "Potent Venom Sac",
+        "quantity": 132
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 14
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 133
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 486
+      },
+      {
+        "id": 24277,
+        "name": "Pile of Crystalline Dust",
+        "quantity": 20
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 73
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 21
+      },
+      {
+        "id": 24357,
+        "name": "Vicious Fang",
+        "quantity": 17
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 19
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 53
+      },
+      {
+        "id": 24289,
+        "name": "Armored Scale",
+        "quantity": 15
+      },
+      {
+        "id": 24339,
+        "name": "Corrupted Core",
+        "quantity": 5
+      },
+      {
+        "id": 24309,
+        "name": "Onyx Core",
+        "quantity": 8
+      },
+      {
+        "id": 24329,
+        "name": "Crystal Core",
+        "quantity": 8
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 24
+      },
+      {
+        "id": 24334,
+        "name": "Pile of Vile Essence",
+        "quantity": 4
+      },
+      {
+        "id": 24314,
+        "name": "Molten Core",
+        "quantity": 3
+      },
+      {
+        "id": 24324,
+        "name": "Destroyer Core",
+        "quantity": 3
+      },
+      {
+        "id": 24319,
+        "name": "Glacial Core",
+        "quantity": 2
+      },
+      {
+        "id": 24340,
+        "name": "Corrupted Lodestone",
+        "quantity": 1
+      },
+      {
+        "id": 24325,
+        "name": "Destroyer Lodestone",
+        "quantity": 1
+      },
+      {
+        "id": 24320,
+        "name": "Glacial Lodestone",
+        "quantity": 1
+      }
+    ]
+  },
+  "Bag of Stolen Goods.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bag of Stolen Goods",
+      "id_placeholder": 9293,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 3800,
+    "result_items": [
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 1518
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 225
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 1033
+      },
+      {
+        "id": 24288,
+        "name": "Large Scale",
+        "quantity": 236
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 50
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 100
+      },
+      {
+        "id": 24356,
+        "name": "Large Fang",
+        "quantity": 224
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 80
+      },
+      {
+        "id": 24282,
+        "name": "Potent Venom Sac",
+        "quantity": 186
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 255
+      },
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 234
+      },
+      {
+        "id": 24283,
+        "name": "Powerful Venom Sac",
+        "quantity": 31
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 244
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 224
+      },
+      {
+        "id": 12254,
+        "name": "Raspberry",
+        "quantity": 30
+      },
+      {
+        "id": 24523,
+        "name": "Medallion of the Soldier",
+        "quantity": 10
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 42
+      },
+      {
+        "id": 24360,
+        "name": "Slab of Poultry Meat",
+        "quantity": 54
+      },
+      {
+        "id": 24516,
+        "name": "Sapphire Orb",
+        "quantity": 4
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 36
+      },
+      {
+        "id": 24357,
+        "name": "Vicious Fang",
+        "quantity": 29
+      },
+      {
+        "id": 12258,
+        "name": "Cinnamon Stick",
+        "quantity": 28
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 43
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 88
+      },
+      {
+        "id": 24519,
+        "name": "Beryl Crystal",
+        "quantity": 8
+      },
+      {
+        "id": 24289,
+        "name": "Armored Scale",
+        "quantity": 39
+      },
+      {
+        "id": 12247,
+        "name": "Bay Leaf",
+        "quantity": 35
+      },
+      {
+        "id": 24277,
+        "name": "Pile of Crystalline Dust",
+        "quantity": 31
+      },
+      {
+        "id": 24475,
+        "name": "Sapphire Crystal",
+        "quantity": 4
+      },
+      {
+        "id": 24531,
+        "name": "Medallion of the Rabid",
+        "quantity": 5
+      },
+      {
+        "id": 24509,
+        "name": "Coral Tentacle",
+        "quantity": 8
+      },
+      {
+        "id": 24474,
+        "name": "Ruby Crystal",
+        "quantity": 9
+      },
+      {
+        "id": 24508,
+        "name": "Ruby Orb",
+        "quantity": 3
+      },
+      {
+        "id": 24473,
+        "name": "Emerald Crystal",
+        "quantity": 7
+      },
+      {
+        "id": 24517,
+        "name": "Medallion of the Magi",
+        "quantity": 7
+      },
+      {
+        "id": 12351,
+        "name": "Orange",
+        "quantity": 11
+      },
+      {
+        "id": 24476,
+        "name": "Medallion of the Shaman",
+        "quantity": 5
+      },
+      {
+        "id": 24518,
+        "name": "Crest of the Magi",
+        "quantity": 2
+      },
+      {
+        "id": 24532,
+        "name": "Crest of the Rabid",
+        "quantity": 3
+      },
+      {
+        "id": 24524,
+        "name": "Crest of the Soldier",
+        "quantity": 1
+      }
+    ]
+  },
+  "Bloodstone Warped Hide.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bloodstone Warped Hide",
+      "id_placeholder": 80681,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 9109,
+    "result_items": [
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 4032
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 4542
+      },
+      {
+        "id": 19730,
+        "name": "Coarse Leather Section",
+        "quantity": 0
+      },
+      {
+        "id": 19728,
+        "name": "Thin Leather Section",
+        "quantity": 0
+      }
+    ]
+  },
+  "Discarded Garment.csv": {
+    "source_item_guesses": {
+      "name_guess": "Discarded Garment",
+      "id_placeholder": 21675,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 5597,
+    "result_items": [
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 8934
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 516
+      }
+    ]
+  },
+  "Filched Goods.csv": {
+    "source_item_guesses": {
+      "name_guess": "Filched Goods",
+      "id_placeholder": 9287,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 2459,
+    "result_items": [
+      {
+        "id": 24342,
+        "name": "Bone Chip",
+        "quantity": 93
+      },
+      {
+        "id": 24360,
+        "name": "Slab of Poultry Meat",
+        "quantity": 44
+      },
+      {
+        "id": 24278,
+        "name": "Tiny Venom Sac",
+        "quantity": 104
+      },
+      {
+        "id": 12229,
+        "name": "Chocolate Bar",
+        "quantity": 376
+      },
+      {
+        "id": 24296,
+        "name": "Tiny Totem",
+        "quantity": 115
+      },
+      {
+        "id": 24352,
+        "name": "Tiny Fang",
+        "quantity": 112
+      },
+      {
+        "id": 12138,
+        "name": "Stick of Butter",
+        "quantity": 885
+      },
+      {
+        "id": 19728,
+        "name": "Thin Leather Section",
+        "quantity": 399
+      },
+      {
+        "id": 24290,
+        "name": "Vial of Weak Blood",
+        "quantity": 119
+      },
+      {
+        "id": 24284,
+        "name": "Tiny Scale",
+        "quantity": 102
+      },
+      {
+        "id": 24285,
+        "name": "Small Scale",
+        "quantity": 32
+      },
+      {
+        "id": 12161,
+        "name": "Beet",
+        "quantity": 44
+      },
+      {
+        "id": 24343,
+        "name": "Bone Shard",
+        "quantity": 29
+      },
+      {
+        "id": 19739,
+        "name": "Wool Scrap",
+        "quantity": 565
+      },
+      {
+        "id": 24346,
+        "name": "Tiny Claw",
+        "quantity": 102
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 49
+      },
+      {
+        "id": 24467,
+        "name": "Tiger's Eye Pebble",
+        "quantity": 5
+      },
+      {
+        "id": 12255,
+        "name": "Blueberry",
+        "quantity": 53
+      },
+      {
+        "id": 24279,
+        "name": "Small Venom Sac",
+        "quantity": 25
+      },
+      {
+        "id": 24273,
+        "name": "Pile of Shimmering Dust",
+        "quantity": 27
+      },
+      {
+        "id": 12258,
+        "name": "Cinnamon Stick",
+        "quantity": 24
+      },
+      {
+        "id": 24353,
+        "name": "Small Fang",
+        "quantity": 21
+      },
+      {
+        "id": 24272,
+        "name": "Pile of Glittering Dust",
+        "quantity": 117
+      },
+      {
+        "id": 24465,
+        "name": "Turquoise Pebble",
+        "quantity": 7
+      },
+      {
+        "id": 24464,
+        "name": "Garnet Pebble",
+        "quantity": 4
+      },
+      {
+        "id": 24297,
+        "name": "Small Totem",
+        "quantity": 27
+      },
+      {
+        "id": 24347,
+        "name": "Small Claw",
+        "quantity": 34
+      },
+      {
+        "id": 24291,
+        "name": "Vial of Thin Blood",
+        "quantity": 27
+      },
+      {
+        "id": 24469,
+        "name": "Carnelian Nugget",
+        "quantity": 1
+      },
+      {
+        "id": 24468,
+        "name": "Peridot Nugget",
+        "quantity": 2
+      },
+      {
+        "id": 12247,
+        "name": "Bay Leaf",
+        "quantity": 16
+      },
+      {
+        "id": 24466,
+        "name": "Malachite Pebble",
+        "quantity": 8
+      },
+      {
+        "id": 24501,
+        "name": "Amethyst Nugget",
+        "quantity": 2
+      },
+      {
+        "id": 24500,
+        "name": "Pearl",
+        "quantity": 4
+      }
+    ]
+  },
+  "Filthy Hide.csv": {
+    "source_item_guesses": {
+      "name_guess": "Filthy Hide",
+      "id_placeholder": 21670,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 100,
+    "result_items": [
+      {
+        "id": 19731,
+        "name": "Rugged Leather Section",
+        "quantity": 116
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 51
+      }
+    ]
+  },
+  "Frayed Garment.csv": {
+    "source_item_guesses": {
+      "name_guess": "Frayed Garment",
+      "id_placeholder": 21673,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 280,
+    "result_items": [
+      {
+        "id": 19741,
+        "name": "Cotton Scrap",
+        "quantity": 134
+      },
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 371
+      }
+    ]
+  },
+  "Frayed Pelt.csv": {
+    "source_item_guesses": {
+      "name_guess": "Frayed Pelt",
+      "id_placeholder": 21656,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 50,
+    "result_items": [
+      {
+        "id": 19734,
+        "name": "Cured Coarse Leather Square",
+        "quantity": 9
+      },
+      {
+        "id": 19736,
+        "name": "Cured Rugged Leather Square",
+        "quantity": 36
+      }
+    ]
+  },
+  "Garment.csv": {
+    "source_item_guesses": {
+      "name_guess": "Garment",
+      "id_placeholder": 21677,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 100,
+    "result_items": [
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 27
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 65
+      }
+    ]
+  },
+  "Hard Leather Strap.csv": {
+    "source_item_guesses": {
+      "name_guess": "Hard Leather Strap",
+      "id_placeholder": 21689,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 1391,
+    "result_items": [
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 1774
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 116
+      }
+    ]
+  },
+  "Heavy Bag of Booty.csv": {
+    "source_item_guesses": {
+      "name_guess": "Heavy Bag of Booty",
+      "id_placeholder": 9349,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 430,
+    "result_items": [
+      {
+        "id": 24518,
+        "name": "Crest of the Magi",
+        "quantity": 1
+      },
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 39
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 18
+      },
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 196
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 21
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 84
+      },
+      {
+        "id": 24277,
+        "name": "Pile of Crystalline Dust",
+        "quantity": 3
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 33
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 12
+      },
+      {
+        "id": 24356,
+        "name": "Large Fang",
+        "quantity": 28
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 32
+      },
+      {
+        "id": 24357,
+        "name": "Vicious Fang",
+        "quantity": 7
+      },
+      {
+        "id": 24282,
+        "name": "Potent Venom Sac",
+        "quantity": 24
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 2
+      },
+      {
+        "id": 24288,
+        "name": "Large Scale",
+        "quantity": 29
+      },
+      {
+        "id": 24283,
+        "name": "Powerful Venom Sac",
+        "quantity": 1
+      },
+      {
+        "id": 24475,
+        "name": "Sapphire Crystal",
+        "quantity": 1
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 7
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 4
+      },
+      {
+        "id": 24532,
+        "name": "Crest of the Rabid",
+        "quantity": 1
+      },
+      {
+        "id": 24519,
+        "name": "Beryl Crystal",
+        "quantity": 1
+      },
+      {
+        "id": 24523,
+        "name": "Medallion of the Soldier",
+        "quantity": 1
+      },
+      {
+        "id": 24289,
+        "name": "Armored Scale",
+        "quantity": 3
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 3
+      },
+      {
+        "id": 24511,
+        "name": "Chrysocola Crystal",
+        "quantity": 1
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 3
+      }
+    ]
+  },
+  "Heavy Icy Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Heavy Icy Bag",
+      "id_placeholder": 9365,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 150,
+    "result_items": [
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 36
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 34
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 7
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 6
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 35
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 5
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 1
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 7
+      },
+      {
+        "id": 24360,
+        "name": "Slab of Poultry Meat",
+        "quantity": 4
+      },
+      {
+        "id": 24339,
+        "name": "Corrupted Core",
+        "quantity": 2
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      },
+      {
+        "id": null,
+        "name": "#N/A",
+        "quantity": 0
+      }
+    ]
+  },
+  "Heavy Loot Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Heavy Loot Bag",
+      "id_placeholder": 8920,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 150,
+    "result_items": [
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 4
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 10
+      },
+      {
+        "id": 24282,
+        "name": "Potent Venom Sac",
+        "quantity": 4
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 35
+      },
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 18
+      },
+      {
+        "id": 19700,
+        "name": "Mithril Ore",
+        "quantity": 77
+      },
+      {
+        "id": 24283,
+        "name": "Powerful Venom Sac",
+        "quantity": 2
+      },
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 3
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 11
+      },
+      {
+        "id": 24289,
+        "name": "Armored Scale",
+        "quantity": 1
+      },
+      {
+        "id": 24357,
+        "name": "Vicious Fang",
+        "quantity": 2
+      },
+      {
+        "id": 24356,
+        "name": "Large Fang",
+        "quantity": 8
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 1
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 7
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 11
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 1
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 3
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 2
+      },
+      {
+        "id": 24324,
+        "name": "Destroyer Core",
+        "quantity": 1
+      },
+      {
+        "id": 24288,
+        "name": "Large Scale",
+        "quantity": 3
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 1
+      }
+    ]
+  },
+  "Heavy Miners Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Heavy Miner's Bag",
+      "id_placeholder": 9301,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 500,
+    "result_items": [
+      {
+        "id": 24522,
+        "name": "Opal Orb",
+        "quantity": 1
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 44
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 143
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 6
+      },
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 165
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 16
+      },
+      {
+        "id": 24475,
+        "name": "Sapphire Crystal",
+        "quantity": 6
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 12
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 33
+      },
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 49
+      },
+      {
+        "id": 24511,
+        "name": "Chrysocola Crystal",
+        "quantity": 8
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 36
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 41
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 4
+      },
+      {
+        "id": 24277,
+        "name": "Pile of Crystalline Dust",
+        "quantity": 1
+      },
+      {
+        "id": 24521,
+        "name": "Opal Crystal",
+        "quantity": 7
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 7
+      },
+      {
+        "id": 24324,
+        "name": "Destroyer Core",
+        "quantity": 8
+      },
+      {
+        "id": 24519,
+        "name": "Beryl Crystal",
+        "quantity": 9
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 1
+      },
+      {
+        "id": 24512,
+        "name": "Chrysocola Orb",
+        "quantity": 1
+      },
+      {
+        "id": 24325,
+        "name": "Destroyer Lodestone",
+        "quantity": 3
+      },
+      {
+        "id": 24509,
+        "name": "Coral Tentacle",
+        "quantity": 2
+      },
+      {
+        "id": 24516,
+        "name": "Sapphire Orb",
+        "quantity": 4
+      },
+      {
+        "id": 24473,
+        "name": "Emerald Crystal",
+        "quantity": 7
+      },
+      {
+        "id": 24474,
+        "name": "Ruby Crystal",
+        "quantity": 4
+      },
+      {
+        "id": 24508,
+        "name": "Ruby Orb",
+        "quantity": 2
+      },
+      {
+        "id": 24510,
+        "name": "Coral Orb",
+        "quantity": 1
+      }
+    ]
+  },
+  "Heavy Supply Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Heavy Supply Bag",
+      "id_placeholder": 9285,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 1081,
+    "result_items": [
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 535
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 100
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 115
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 316
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 22
+      },
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 101
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 120
+      },
+      {
+        "id": 24309,
+        "name": "Onyx Core",
+        "quantity": 22
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 16
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 26
+      },
+      {
+        "id": 24310,
+        "name": "Onyx Lodestone",
+        "quantity": 3
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 34
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 17
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 25
+      }
+    ]
+  },
+  "Metal Scrap.csv": {
+    "source_item_guesses": {
+      "name_guess": "Metal Scrap",
+      "id_placeholder": 21681,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 5555,
+    "result_items": [
+      {
+        "id": 19702,
+        "name": "Platinum Ore",
+        "quantity": 7376
+      },
+      {
+        "id": 19698,
+        "name": "Gold Ore",
+        "quantity": 1286
+      },
+      {
+        "id": 19699,
+        "name": "Iron Ore",
+        "quantity": 1269
+      }
+    ]
+  },
+  "Miners Sack.csv": {
+    "source_item_guesses": {
+      "name_guess": "Miner's Sack",
+      "id_placeholder": 9298,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 345,
+    "result_items": [
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 35
+      },
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 124
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 34
+      },
+      {
+        "id": 19731,
+        "name": "Rugged Leather Section",
+        "quantity": 96
+      },
+      {
+        "id": 24344,
+        "name": "Bone",
+        "quantity": 23
+      },
+      {
+        "id": 24504,
+        "name": "Peridot Lump",
+        "quantity": 6
+      },
+      {
+        "id": 24275,
+        "name": "Pile of Luminous Dust",
+        "quantity": 15
+      },
+      {
+        "id": 24345,
+        "name": "Heavy Bone",
+        "quantity": 6
+      },
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 18
+      },
+      {
+        "id": 24322,
+        "name": "Destroyer Fragment",
+        "quantity": 10
+      },
+      {
+        "id": 24349,
+        "name": "Sharp Claw",
+        "quantity": 3
+      },
+      {
+        "id": 24323,
+        "name": "Destroyer Shard",
+        "quantity": 2
+      },
+      {
+        "id": 24348,
+        "name": "Claw",
+        "quantity": 25
+      },
+      {
+        "id": 24873,
+        "name": "Ruby Shard",
+        "quantity": 4
+      },
+      {
+        "id": 24506,
+        "name": "Topaz Lump",
+        "quantity": 5
+      },
+      {
+        "id": 24503,
+        "name": "Sunstone Lump",
+        "quantity": 2
+      },
+      {
+        "id": 24293,
+        "name": "Vial of Thick Blood",
+        "quantity": 8
+      },
+      {
+        "id": 24772,
+        "name": "Gold Doubloon",
+        "quantity": 3
+      },
+      {
+        "id": 24526,
+        "name": "Spinel Lump",
+        "quantity": 4
+      },
+      {
+        "id": 24507,
+        "name": "Lapis Lump",
+        "quantity": 4
+      },
+      {
+        "id": 24876,
+        "name": "Sapphire Shard",
+        "quantity": 1
+      },
+      {
+        "id": 24870,
+        "name": "Chrysocola Shard",
+        "quantity": 1
+      },
+      {
+        "id": 24527,
+        "name": "Amethyst Lump",
+        "quantity": 1
+      },
+      {
+        "id": 24472,
+        "name": "Carnelian Lump",
+        "quantity": 5
+      },
+      {
+        "id": 24874,
+        "name": "Coral Chunk",
+        "quantity": 2
+      }
+    ]
+  },
+  "Purloined Goods - New.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bag of Purloined Goods",
+      "id_placeholder": 9289,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 2680,
+    "result_items": [
+      {
+        "id": 12247,
+        "name": "Bay Leaf",
+        "quantity": 12
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 53
+      },
+      {
+        "id": 12138,
+        "name": "Stick of Butter",
+        "quantity": 943
+      },
+      {
+        "id": 12351,
+        "name": "Orange",
+        "quantity": 80
+      },
+      {
+        "id": 19741,
+        "name": "Cotton Scrap",
+        "quantity": 722
+      },
+      {
+        "id": 24348,
+        "name": "Claw",
+        "quantity": 142
+      },
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 119
+      },
+      {
+        "id": 12229,
+        "name": "Chocolate Bar",
+        "quantity": 394
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 146
+      },
+      {
+        "id": 24344,
+        "name": "Bone",
+        "quantity": 169
+      },
+      {
+        "id": 24280,
+        "name": "Venom Sac",
+        "quantity": 150
+      },
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 152
+      },
+      {
+        "id": 19730,
+        "name": "Coarse Leather Section",
+        "quantity": 528
+      },
+      {
+        "id": 24504,
+        "name": "Peridot Lump",
+        "quantity": 5
+      },
+      {
+        "id": 24354,
+        "name": "Fang",
+        "quantity": 135
+      },
+      {
+        "id": 12258,
+        "name": "Cinnamon Stick",
+        "quantity": 12
+      },
+      {
+        "id": 24286,
+        "name": "Scale",
+        "quantity": 138
+      },
+      {
+        "id": 12329,
+        "name": "Yam",
+        "quantity": 76
+      },
+      {
+        "id": 24506,
+        "name": "Topaz Lump",
+        "quantity": 5
+      },
+      {
+        "id": 24772,
+        "name": "Gold Doubloon",
+        "quantity": 3
+      },
+      {
+        "id": 24526,
+        "name": "Spinel Lump",
+        "quantity": 8
+      },
+      {
+        "id": 24528,
+        "name": "Talisman of the Stout",
+        "quantity": 6
+      },
+      {
+        "id": 24360,
+        "name": "Slab of Poultry Meat",
+        "quantity": 52
+      },
+      {
+        "id": 24527,
+        "name": "Amethyst Lump",
+        "quantity": 4
+      },
+      {
+        "id": 24507,
+        "name": "Lapis Lump",
+        "quantity": 4
+      },
+      {
+        "id": 24525,
+        "name": "Talisman of Lingering",
+        "quantity": 3
+      },
+      {
+        "id": 24472,
+        "name": "Carnelian Lump",
+        "quantity": 7
+      },
+      {
+        "id": 24503,
+        "name": "Sunstone Lump",
+        "quantity": 4
+      },
+      {
+        "id": 24503,
+        "name": "Sunstone Lump",
+        "quantity": 4
+      }
+    ]
+  },
+  "Rawhide Leather Strap.csv": {
+    "source_item_guesses": {
+      "name_guess": "Rawhide Leather Strap",
+      "id_placeholder": 21684,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 100,
+    "result_items": [
+      {
+        "id": 19719,
+        "name": "Rawhide Leather Section",
+        "quantity": 181
+      }
+    ]
+  },
+  "Reclaimed Wood Chunk - New.csv": {
+    "source_item_guesses": {
+      "name_guess": "Reclaimed Wood Chunk",
+      "id_placeholder": 79423,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 1416,
+    "result_items": [
+      {
+        "id": 19726,
+        "name": "Soft Wood Log",
+        "quantity": 692
+      },
+      {
+        "id": 19725,
+        "name": "Ancient Wood Log",
+        "quantity": 446
+      },
+      {
+        "id": 19727,
+        "name": "Seasoned Wood Log",
+        "quantity": 729
+      },
+      {
+        "id": 19724,
+        "name": "Hard Wood Log",
+        "quantity": 679
+      },
+      {
+        "id": 19722,
+        "name": "Elder Wood Log",
+        "quantity": 188
+      },
+      {
+        "id": 19723,
+        "name": "Green Wood Log",
+        "quantity": 163
+      }
+    ]
+  },
+  "Salvageable Hide.csv": {
+    "source_item_guesses": {
+      "name_guess": "Salvageable Hide",
+      "id_placeholder": 22331,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 3024,
+    "result_items": [
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 3927
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 243
+      }
+    ]
+  },
+  "Salvageable Intact Forge Scrap.csv": {
+    "source_item_guesses": {
+      "name_guess": "Salvageable Intact Forge Scrap",
+      "id_placeholder": 82488,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 879,
+    "result_items": [
+      {
+        "id": 19700,
+        "name": "Mithril Ore",
+        "quantity": 3617
+      },
+      {
+        "id": 19701,
+        "name": "Orichalcum Ore",
+        "quantity": 291
+      },
+      {
+        "id": 82582,
+        "name": "Sliver of Twitching Forgemetal",
+        "quantity": 211
+      }
+    ]
+  },
+  "Salvageable Pelt.csv": {
+    "source_item_guesses": {
+      "name_guess": "Salvageable Pelt",
+      "id_placeholder": 21658,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 250,
+    "result_items": [
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 24
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 335
+      }
+    ]
+  },
+  "Small Thorned Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Small Thorned Bag",
+      "id_placeholder": 9335,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 120,
+    "result_items": [
+      {
+        "id": 19739,
+        "name": "Wool Scrap",
+        "quantity": 42
+      },
+      {
+        "id": 24296,
+        "name": "Tiny Totem",
+        "quantity": 9
+      },
+      {
+        "id": 19728,
+        "name": "Thin Leather Section",
+        "quantity": 25
+      },
+      {
+        "id": 24272,
+        "name": "Pile of Glittering Dust",
+        "quantity": 6
+      },
+      {
+        "id": 12138,
+        "name": "Stick of Butter",
+        "quantity": 49
+      },
+      {
+        "id": 12229,
+        "name": "Chocolate Bar",
+        "quantity": 18
+      },
+      {
+        "id": 24290,
+        "name": "Vial of Weak Blood",
+        "quantity": 12
+      },
+      {
+        "id": 12327,
+        "name": "Clam",
+        "quantity": 1
+      },
+      {
+        "id": 24297,
+        "name": "Small Totem",
+        "quantity": 2
+      },
+      {
+        "id": 12248,
+        "name": "Thyme Leaf",
+        "quantity": 1
+      },
+      {
+        "id": 24273,
+        "name": "Pile of Shimmering Dust",
+        "quantity": 2
+      },
+      {
+        "id": 24291,
+        "name": "Vial of Thin Blood",
+        "quantity": 4
+      }
+    ]
+  },
+  "Snatched Goods.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bag of Snatched Goods",
+      "id_placeholder": 9290,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 100,
+    "result_items": [
+      {
+        "id": 24344,
+        "name": "Bone",
+        "quantity": 3
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 4
+      },
+      {
+        "id": 12247,
+        "name": "Bay Leaf",
+        "quantity": 1
+      },
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 8
+      },
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 42
+      },
+      {
+        "id": 24348,
+        "name": "Claw",
+        "quantity": 9
+      },
+      {
+        "id": 24355,
+        "name": "Sharp Fang",
+        "quantity": 2
+      },
+      {
+        "id": 24345,
+        "name": "Heavy Bone",
+        "quantity": 2
+      },
+      {
+        "id": 24286,
+        "name": "Scale",
+        "quantity": 3
+      },
+      {
+        "id": 24354,
+        "name": "Fang",
+        "quantity": 3
+      },
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 3
+      },
+      {
+        "id": 12351,
+        "name": "Orange",
+        "quantity": 6
+      },
+      {
+        "id": 19731,
+        "name": "Rugged Leather Section",
+        "quantity": 17
+      },
+      {
+        "id": 24280,
+        "name": "Venom Sac",
+        "quantity": 8
+      },
+      {
+        "id": 12258,
+        "name": "Cinnamon Stick",
+        "quantity": 1
+      },
+      {
+        "id": 24275,
+        "name": "Pile of Luminous Dust",
+        "quantity": 3
+      },
+      {
+        "id": 24281,
+        "name": "Full Venom Sac",
+        "quantity": 2
+      },
+      {
+        "id": 24293,
+        "name": "Vial of Thick Blood",
+        "quantity": 1
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 1
+      },
+      {
+        "id": 24506,
+        "name": "Topaz Lump",
+        "quantity": 1
+      },
+      {
+        "id": 12329,
+        "name": "Yam",
+        "quantity": 2
+      },
+      {
+        "id": 12537,
+        "name": "Blackberry",
+        "quantity": 1
+      },
+      {
+        "id": 24349,
+        "name": "Sharp Claw",
+        "quantity": 1
+      }
+    ]
+  },
+  "Stolen Goods.csv": {
+    "source_item_guesses": {
+      "name_guess": "Bag of Stolen Goods",
+      "id_placeholder": 9293,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 800,
+    "result_items": [
+      {
+        "id": 24341,
+        "name": "Large Bone",
+        "quantity": 41
+      },
+      {
+        "id": 24294,
+        "name": "Vial of Potent Blood",
+        "quantity": 51
+      },
+      {
+        "id": 24282,
+        "name": "Potent Venom Sac",
+        "quantity": 38
+      },
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 277
+      },
+      {
+        "id": 24350,
+        "name": "Large Claw",
+        "quantity": 52
+      },
+      {
+        "id": 19732,
+        "name": "Hardened Leather Section",
+        "quantity": 12
+      },
+      {
+        "id": 24276,
+        "name": "Pile of Incandescent Dust",
+        "quantity": 45
+      },
+      {
+        "id": 24360,
+        "name": "Slab of Poultry Meat",
+        "quantity": 17
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 13
+      },
+      {
+        "id": 24288,
+        "name": "Large Scale",
+        "quantity": 48
+      },
+      {
+        "id": 24299,
+        "name": "Intricate Totem",
+        "quantity": 36
+      },
+      {
+        "id": 19729,
+        "name": "Thick Leather Section",
+        "quantity": 196
+      },
+      {
+        "id": 24359,
+        "name": "Slab of Red Meat",
+        "quantity": 23
+      },
+      {
+        "id": 24356,
+        "name": "Large Fang",
+        "quantity": 39
+      },
+      {
+        "id": 12247,
+        "name": "Bay Leaf",
+        "quantity": 5
+      },
+      {
+        "id": 12254,
+        "name": "Raspberry",
+        "quantity": 5
+      },
+      {
+        "id": 24300,
+        "name": "Elaborate Totem",
+        "quantity": 11
+      },
+      {
+        "id": 24295,
+        "name": "Vial of Powerful Blood",
+        "quantity": 12
+      },
+      {
+        "id": 24358,
+        "name": "Ancient Bone",
+        "quantity": 5
+      },
+      {
+        "id": 24289,
+        "name": "Armored Scale",
+        "quantity": 5
+      },
+      {
+        "id": 24351,
+        "name": "Vicious Claw",
+        "quantity": 6
+      },
+      {
+        "id": 24357,
+        "name": "Vicious Fang",
+        "quantity": 2
+      },
+      {
+        "id": 24277,
+        "name": "Pile of Crystalline Dust",
+        "quantity": 2
+      },
+      {
+        "id": 24474,
+        "name": "Ruby Crystal",
+        "quantity": 1
+      },
+      {
+        "id": 24508,
+        "name": "Ruby Orb",
+        "quantity": 1
+      },
+      {
+        "id": 24283,
+        "name": "Powerful Venom Sac",
+        "quantity": 6
+      },
+      {
+        "id": 24523,
+        "name": "Medallion of the Soldier",
+        "quantity": 4
+      },
+      {
+        "id": 24473,
+        "name": "Emerald Crystal",
+        "quantity": 1
+      }
+    ]
+  },
+  "Supply Bag.csv": {
+    "source_item_guesses": {
+      "name_guess": "Supply Bag",
+      "id_placeholder": 9281,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 3103,
+    "result_items": [
+      {
+        "id": 19730,
+        "name": "Coarse Leather Section",
+        "quantity": 918
+      },
+      {
+        "id": 24280,
+        "name": "Venom Sac",
+        "quantity": 263
+      },
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 248
+      },
+      {
+        "id": 24348,
+        "name": "Claw",
+        "quantity": 261
+      },
+      {
+        "id": 19741,
+        "name": "Cotton Scrap",
+        "quantity": 1246
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 271
+      },
+      {
+        "id": 24344,
+        "name": "Bone",
+        "quantity": 254
+      },
+      {
+        "id": 24307,
+        "name": "Onyx Fragment",
+        "quantity": 71
+      },
+      {
+        "id": 24286,
+        "name": "Scale",
+        "quantity": 253
+      },
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 236
+      },
+      {
+        "id": 24354,
+        "name": "Fang",
+        "quantity": 261
+      }
+    ]
+  },
+  "Supply Sack.csv": {
+    "source_item_guesses": {
+      "name_guess": "Supply Sack",
+      "id_placeholder": 9282,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 1856,
+    "result_items": [
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 542
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 115
+      },
+      {
+        "id": 19731,
+        "name": "Rugged Leather Section",
+        "quantity": 397
+      },
+      {
+        "id": 24293,
+        "name": "Vial of Thick Blood",
+        "quantity": 28
+      },
+      {
+        "id": 24345,
+        "name": "Heavy Bone",
+        "quantity": 31
+      },
+      {
+        "id": 24349,
+        "name": "Sharp Claw",
+        "quantity": 29
+      },
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 119
+      },
+      {
+        "id": 24286,
+        "name": "Scale",
+        "quantity": 112
+      },
+      {
+        "id": 24348,
+        "name": "Claw",
+        "quantity": 126
+      },
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 119
+      },
+      {
+        "id": 24280,
+        "name": "Venom Sac",
+        "quantity": 134
+      },
+      {
+        "id": 24287,
+        "name": "Smooth Scale",
+        "quantity": 28
+      },
+      {
+        "id": 24344,
+        "name": "Bone",
+        "quantity": 105
+      },
+      {
+        "id": 24354,
+        "name": "Fang",
+        "quantity": 141
+      },
+      {
+        "id": 24281,
+        "name": "Full Venom Sac",
+        "quantity": 33
+      },
+      {
+        "id": 24275,
+        "name": "Pile of Luminous Dust",
+        "quantity": 29
+      },
+      {
+        "id": 24355,
+        "name": "Sharp Fang",
+        "quantity": 20
+      },
+      {
+        "id": 24307,
+        "name": "Onyx Fragment",
+        "quantity": 35
+      },
+      {
+        "id": 24308,
+        "name": "Onyx Shard",
+        "quantity": 8
+      }
+    ]
+  },
+  "Thorned Sack.csv": {
+    "source_item_guesses": {
+      "name_guess": "Thorned Sack",
+      "id_placeholder": 9338,
+      "type_guess": "CONTAINER"
+    },
+    "extracted_sample_size": 562,
+    "result_items": [
+      {
+        "id": 24298,
+        "name": "Totem",
+        "quantity": 48
+      },
+      {
+        "id": 19731,
+        "name": "Rugged Leather Section",
+        "quantity": 221
+      },
+      {
+        "id": 12351,
+        "name": "Orange",
+        "quantity": 177
+      },
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 309
+      },
+      {
+        "id": 24274,
+        "name": "Pile of Radiant Dust",
+        "quantity": 55
+      },
+      {
+        "id": 24292,
+        "name": "Vial of Blood",
+        "quantity": 61
+      },
+      {
+        "id": 24293,
+        "name": "Vial of Thick Blood",
+        "quantity": 15
+      },
+      {
+        "id": 24275,
+        "name": "Pile of Luminous Dust",
+        "quantity": 9
+      }
+    ]
+  },
+  "Unstable Metal Scrap.csv": {
+    "source_item_guesses": {
+      "name_guess": "Unstable Metal Chunk",
+      "id_placeholder": 79079,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 708,
+    "result_items": [
+      {
+        "id": 19700,
+        "name": "Mithril Ore",
+        "quantity": 107
+      },
+      {
+        "id": 19699,
+        "name": "Iron Ore",
+        "quantity": 679
+      },
+      {
+        "id": 19702,
+        "name": "Platinum Ore",
+        "quantity": 309
+      },
+      {
+        "id": 19701,
+        "name": "Orichalcum Ore",
+        "quantity": 206
+      },
+      {
+        "id": 19697,
+        "name": "Copper Ore",
+        "quantity": 147
+      }
+    ]
+  },
+  "Unstable Rags - New.csv": {
+    "source_item_guesses": {
+      "name_guess": "Unstable Rag",
+        "id_placeholder": 79138,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 1880,
+    "result_items": [
+      {
+        "id": 19748,
+        "name": "Silk Scrap",
+        "quantity": 306
+      },
+      {
+        "id": 19739,
+        "name": "Wool Scrap",
+        "quantity": 995
+      },
+      {
+        "id": 19718,
+        "name": "Jute Scrap",
+        "quantity": 299
+      },
+      {
+        "id": 19743,
+        "name": "Linen Scrap",
+        "quantity": 1010
+      },
+      {
+        "id": 19741,
+        "name": "Cotton Scrap",
+        "quantity": 984
+      },
+      {
+        "id": 19745,
+        "name": "Gossamer Scrap",
+        "quantity": 291
+      }
+    ]
+  },
+  "Worn Garment.csv": {
+    "source_item_guesses": {
+      "name_guess": "Worn Garment",
+      "id_placeholder": 21671,
+      "type_guess": "SALVAGEABLE"
+    },
+    "extracted_sample_size": 648,
+    "result_items": [
+      {
+        "id": 19718,
+        "name": "Jute Scrap",
+        "quantity": 321
+      },
+      {
+        "id": 19739,
+        "name": "Wool Scrap",
+        "quantity": 861
+      }
+    ]
+  }
+}

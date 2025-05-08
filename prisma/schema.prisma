@@ -1,0 +1,81 @@
+// prisma/schema.prisma
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Specifies the Prisma Client generator
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Defines the database connection (PostgreSQL recommended)
+datasource db {
+  provider = "postgresql" // Or your chosen provider like mysql, sqlite
+  url      = env("DATABASE_URL") // Connection string from your .env file
+  directUrl = env("DIRECT_URL")
+}
+
+/// Represents a container or salvageable item that is the *source* of drops/results.
+/// Stores the total sample size from your testing.
+model SourceItem {
+  id         Int      @id // The Guild Wars 2 Item ID - This is the primary identifier.
+  name       String   @unique // The in-game name of the item (e.g., "Heavy Bag of Booty"). Ensures uniqueness.
+  sampleSize Int      // The total number of times this item was opened or salvaged in your dataset. Crucial for calculating rates.
+  type       ItemType // Enum to distinguish between containers and salvageable items (useful for filtering/logic).
+
+  // Relation: One SourceItem can yield many different ResultItems across the sample.
+  // This links to the DropRecord table which holds the details of each drop.
+  dropRecords DropRecord[]
+
+  createdAt DateTime @default(now()) // Timestamp for when the record was created.
+  updatedAt DateTime @updatedAt // Timestamp for when the record was last updated.
+
+  // Optional: Explicitly map to a table name in the database.
+  @@map("source_items")
+}
+
+/// Represents an item that is *obtained* as a result of opening/salvaging a SourceItem.
+/// This table primarily serves to store the unique item IDs and names obtained.
+model ResultItem {
+  id   Int    @id // The Guild Wars 2 Item ID of the item obtained.
+  name String @unique // The in-game name of the item obtained (e.g., "Mithril Ore"). Ensures uniqueness.
+
+  // Relation: One ResultItem can be a potential drop from many different SourceItems.
+  // This links to the DropRecord table.
+  dropRecords DropRecord[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Optional: Explicitly map to a table name in the database.
+  @@map("result_items")
+}
+
+/// Linking table: Records the total quantity of a specific ResultItem obtained
+/// from opening/salvaging a specific SourceItem across the entire sampleSize.
+model DropRecord {
+  // Using a compound key is often suitable here, but a CUID can also work if preferred.
+  // Let's use a compound key based on the relationship.
+  sourceItemId Int // Foreign key linking to SourceItem.id
+  resultItemId Int // Foreign key linking to ResultItem.id
+  totalQuantity Int // The *total* count of this ResultItem obtained from the SourceItem across the *entire* sampleSize.
+
+  // Define the relations explicitly for Prisma Client.
+  sourceItem SourceItem @relation(fields: [sourceItemId], references: [id], onDelete: Cascade) // If a SourceItem is deleted, delete associated drop records.
+  resultItem ResultItem @relation(fields: [resultItemId], references: [id], onDelete: Cascade) // If a ResultItem is deleted, delete associated drop records.
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Define a unique constraint for the combination of source and result item.
+  // This prevents duplicate entries for the same drop relationship.
+  @@id([sourceItemId, resultItemId])
+  // Optional: Explicitly map to a table name in the database.
+  @@map("drop_records")
+}
+
+/// Enum to categorize the source items for potential filtering or specific logic.
+enum ItemType {
+  CONTAINER   // Represents items like bags, chests etc.
+  SALVAGEABLE // Represents items that are salvaged for materials.
+}
