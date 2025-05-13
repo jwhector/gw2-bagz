@@ -1,10 +1,10 @@
-import type { SourceItemDataWithContents, GW2PriceData } from "./types";
+import type { ProcessedSourceItemData } from "./types";
 import { getCombinedItemData } from "./fetchItems";
 
 export async function getMarketValue() {
   const { sourceItems, resultItems } = await getCombinedItemData();
 
-  for (const sourceItem of Object.values(sourceItems as Record<number, SourceItemDataWithContents & GW2PriceData>)) {
+  for (const sourceItem of Object.values(sourceItems as Record<number, ProcessedSourceItemData>)) {
     let totalValueContribution = 0;
     sourceItem.contents = sourceItem.contents.map((item) => {
       const itemPrice = resultItems[item.id].sells.unit_price;
@@ -13,16 +13,17 @@ export async function getMarketValue() {
       totalValueContribution += valueContribution;
       return {
         ...item,
-        // ...resultItems[item.id],
+        ...resultItems[item.id],
         dropRate,
         valueContribution,
       };
     });
-    sourceItem.valueFromContents = totalValueContribution * 0.85;
-    sourceItem.value = sourceItem.sells.unit_price * 0.85;
-    sourceItem.profit = sourceItem.valueFromContents - sourceItem.value;
-    sourceItem.profitMargin = sourceItem.profit / sourceItem.value;
+    sourceItem.contentsValue = totalValueContribution * 0.85;
+    sourceItem.containerValue = sourceItem.sells.unit_price * 0.85;
+    sourceItem.profitFromBuyOrder = sourceItem.contentsValue - sourceItem.buys.unit_price;
+    sourceItem.profitFromSellOrder = sourceItem.contentsValue - sourceItem.sells.unit_price;
+    sourceItem.profitMarginFromBuy = sourceItem.profitFromBuyOrder / sourceItem.contentsValue;
   }
 
-  return { sourceItems: sourceItems as Record<number, SourceItemDataWithContents & GW2PriceData>, resultItems };
+  return { sourceItems: sourceItems as Record<number, ProcessedSourceItemData>, resultItems };
 }

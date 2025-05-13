@@ -48,10 +48,12 @@ export interface SourceItemContents extends GW2ItemData, GW2PriceData {
 
 export interface SourceItemDataWithContents extends SourceItemData {
   contents: SourceItemContents[];
-  valueFromContents: number;
-  value: number;
-  profit: number;
-  profitMargin: number;
+  contentsValue: number;
+  containerValue: number;
+  profitFromBuyOrder: number;
+  profitFromSellOrder: number;
+  profitMarginFromBuy: number;
+  profitMarginFromSell: number;
 }
 
 export interface ProcessedSourceItemData

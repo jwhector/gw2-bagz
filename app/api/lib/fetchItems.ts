@@ -43,7 +43,7 @@ export async function getCombinedItemData() {
   const sourceItemRecord: Record<number, SourceItemData & GW2PriceData> = {};
   const resultItemRecord: Record<number, ResultItemData & GW2PriceData> = {};
 
-  allSourceItems.forEach((item) => {
+  allSourceItems.forEach(async (item) => {
     const itemPriceData = gw2PricesApiData.find(
       (priceData) => priceData.id === item.id
     );
@@ -72,7 +72,7 @@ export async function getCombinedItemData() {
     };
   });
 
-  allResultItems.forEach((item) => {
+  allResultItems.forEach(async (item) => {
     const itemPriceData = gw2PricesApiData.find(
       (priceData) => priceData.id === item.id
     );

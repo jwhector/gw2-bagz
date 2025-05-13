@@ -13,9 +13,13 @@ export default function SourceItemDivergingBarChart({
   const { sourceItems, resultItems } = data;
 
   const gRect = useRef(null);
+  const gName = useRef(null);
+  const gValue = useRef(null);
+  const gAxis = useRef(null);
+  const gImg = useRef(null);
 
   const sourceItemsArray = Object.values(sourceItems);
-  const sortedData = d3.sort(sourceItemsArray, (a, b) => b.profit - a.profit);
+  const sortedData = d3.sort(sourceItemsArray, (a, b) => b.profitFromBuyOrder - a.profitFromBuyOrder);
   const barHeight = 25;
   const marginTop = 30;
   const marginRight = 60;
@@ -29,7 +33,7 @@ export default function SourceItemDivergingBarChart({
     () =>
       d3
         .scaleLinear()
-        .domain(d3.extent(sortedData, (d) => d.profit) as [number, number])
+        .domain(d3.extent(sortedData, (d) => d.profitFromBuyOrder) as [number, number])
         .rangeRound([marginLeft, width - marginRight]),
     [sortedData]
   );
@@ -45,19 +49,19 @@ export default function SourceItemDivergingBarChart({
   );
 
   useEffect(() => {
-    if (!gRect.current) return;
+    if (!gRect.current || !gImg.current) return;
 
     d3.select(gRect.current)
       .selectAll("rect")
       .data(sortedData)
       .join("rect")
-      .attr("fill", (d) => (d.profit > 0 ? "green" : "red"))
+      .attr("fill", (d) => (d.profitFromBuyOrder > 0 ? "green" : "red"))
       .attr("x", () => x(0))
       .attr("y", (d) => y(d.name)!)
       .attr("width", 0)
       .attr("height", y.bandwidth());
 
-    d3.select(gRect.current)
+    d3.select(gImg.current)
       .selectAll("clipPath")
       .data(sortedData)
       .join("clipPath")
@@ -67,9 +71,9 @@ export default function SourceItemDivergingBarChart({
       .join("circle")
       .attr("cx", () => x(0) - 2)
       .attr("cy", (d) => y(d.name)! + 10)
-      .attr("r", 9);
+      .attr("r", 10);
 
-    d3.select(gRect.current)
+    d3.select(gImg.current)
       .selectAll("image")
       .data(sortedData)
       .join("image")
@@ -79,6 +83,27 @@ export default function SourceItemDivergingBarChart({
       .attr("height", 20)
       .attr("width", 20)
       .attr("clip-path", (d) => `url(#circleClip-${d.id})`);
+
+    d3.select(gName.current)
+      .selectAll("text")
+      .data(sortedData)
+      .join("text")
+      .text((d) => d.name)
+      .attr("text-anchor", (d) => (d.profitFromBuyOrder > 0 ? "end" : "start"))
+      .attr("x", (d) => x(0) + (d.profitFromBuyOrder > 0 ? -15 : 15))
+      .attr("y", (d) => y(d.name)! + y.bandwidth() / 2 + y.padding() / 2)
+      .attr("dy", "0.35em");
+
+    d3.select(gValue.current)
+      .selectAll("text")
+      .data(sortedData)
+      .join("text")
+      .text((d) => d3.format("+.1f")(d.profitFromBuyOrder))
+      .attr("text-anchor", (d) => (d.profitFromBuyOrder > 0 ? "start" : "end"))
+      .attr("x", (d) => x(d.profitFromBuyOrder) + (d.profitFromBuyOrder > 0 ? 10 : -10))
+      .attr("y", (d) => y(d.name)! + y.bandwidth() / 2)
+      .attr("dy", "0.35em");
+
   }, [sortedData, x, y]);
 
   useEffect(() => {
@@ -89,19 +114,21 @@ export default function SourceItemDivergingBarChart({
     d3.select(gRect.current)
       .selectAll("rect")
       .transition(t)
-      .attr("x", (d) =>
-        x(Math.min((d as ProcessedSourceItemData).profit, 0))
-      )
+      .attr("x", (d) => x(Math.min((d as ProcessedSourceItemData).profitFromBuyOrder, 0)))
       .attr("width", (d) =>
-        Math.abs(
-          x((d as ProcessedSourceItemData).profit) - x(0)
-        )
+        Math.abs(x((d as ProcessedSourceItemData).profitFromBuyOrder) - x(0))
       );
   }, [sortedData, x, y]);
 
   return (
     <svg width={width} height={height}>
       <g ref={gRect}></g>
+      <g style={{ fill: "white" }}>
+        <g ref={gName}></g>
+        <g ref={gValue}></g>
+      </g>
+      <g ref={gAxis}></g>
+      <g ref={gImg}></g>
     </svg>
   );
 }
