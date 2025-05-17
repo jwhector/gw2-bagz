@@ -7,6 +7,12 @@ import SourceItemSunburstChart from "./components/SourceItemSunburstChart";
 
 export default function Home() {
   const [data, setData] = useState<ProcessedItemData | null>(null);
+  const [sourceItemId, setSourceItemId] = useState<number | null>(null);
+
+  const onSourceItemClick = (sourceItemId: number) => {
+    console.log("Source item clicked:", sourceItemId);
+    setSourceItemId(sourceItemId);
+  }
 
   useEffect(() => {
     fetch("http://localhost:3000/api/items/test").then((res) => {
@@ -18,8 +24,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      { data && <SourceItemDivergingBarChart data={data} /> }
-      { data && <SourceItemSunburstChart data={data} sourceItemId={8920} /> }
+      { data && <SourceItemDivergingBarChart data={data} onSourceItemClick={onSourceItemClick} /> }
+      { data && <SourceItemSunburstChart data={data} sourceItemId={sourceItemId || 8920} /> }
     </div>
   );
 }

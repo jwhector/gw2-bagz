@@ -22,6 +22,8 @@ export default function SourceItemSunburstChart({
   const initialSourceItem = sourceItems && sourceItems[sourceItemId] ? sourceItems[sourceItemId] : null;
   const [sourceItem, setSourceItem] = useState(initialSourceItem);
 
+  console.log(sourceItem);
+
   // State to store the fetched average colors for each slice
   const [sliceColors, setSliceColors] = useState<SliceColors>({});
 
