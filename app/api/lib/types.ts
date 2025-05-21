@@ -44,6 +44,7 @@ export interface SourceItemContents extends GW2ItemData, GW2PriceData {
   quantity: number;
   dropRate: number;
   valueContribution: number;
+  valueContributionPercentage: number;
 }
 
 export interface SourceItemDataWithContents extends SourceItemData {

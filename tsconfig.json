@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/SourceItemDivergingBarChart.tsx"
-  ],
+, "app/api/lib/labeler.js"  ],
   "exclude": ["node_modules"]
 }
