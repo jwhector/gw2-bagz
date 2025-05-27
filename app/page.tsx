@@ -1,18 +1,53 @@
 "use client";
 import { useEffect, useState } from "react";
-import SourceItemDivergingBarChart from "./components/SourceItemDivergingBarChart";
+import { useRouter, useSearchParams } from "next/navigation";
+import OverviewPage from "./components/pages/OverviewPage";
+import BreakdownPage from "./components/pages/BreakdownPage";
 import type { ProcessedItemData } from "./api/lib/types";
-import ResultItemBarChart from "./components/ResultItemBarChart";
-import ResultItemScatterPlot from "./components/ResultItemScatterPlot";
+
+type ViewState = "overview" | "breakdown" | "transitioning";
 
 export default function Home() {
   const [data, setData] = useState<ProcessedItemData | null>(null);
-  const [sourceItemId, setSourceItemId] = useState<number | null>(null);
+  const [viewState, setViewState] = useState<ViewState>("overview");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Get sourceItemId from URL
+  const sourceItemId = searchParams.get("item")
+    ? parseInt(searchParams.get("item")!)
+    : null;
 
   const onSourceItemClick = (sourceItemId: number) => {
     console.log("Source item clicked:", sourceItemId);
-    setSourceItemId(sourceItemId);
+    router.push(`/?item=${sourceItemId}`, { scroll: false });
   };
+
+  const onBackToOverview = () => {
+    router.push("/", { scroll: false });
+  };
+
+  // Handle browser back/forward navigation and URL changes
+  useEffect(() => {
+    const currentSourceItemId = searchParams.get("item")
+      ? parseInt(searchParams.get("item")!)
+      : null;
+
+    if (currentSourceItemId) {
+      setViewState("breakdown");
+    } else {
+      setViewState("overview");
+    }
+  }, [searchParams]);
+
+  // Initialize view state based on URL on mount
+  useEffect(() => {
+    if (sourceItemId) {
+      setViewState("breakdown");
+    } else {
+      setViewState("overview");
+    }
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/items/test").then((res) => {
@@ -23,21 +58,36 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-items-center min-h-screen p-6 pb-20 gap-12 sm:p-16 font-[family-name:var(--font-geist-sans)]">
-      {data && (
-        <SourceItemDivergingBarChart
-          data={data}
-          onSourceItemClick={onSourceItemClick}
-        />
-      )}
-      {data && sourceItemId && (
-        <ResultItemBarChart sourceItemData={data.sourceItems[sourceItemId]} />
-      )}
-      {data && sourceItemId && (
-        <ResultItemScatterPlot
-          sourceItemData={data.sourceItems[sourceItemId]}
-        />
-      )}
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+      {/* Overview View */}
+      <div
+        className={`transition-opacity duration-300 ease-in-out ${
+          viewState === "overview"
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {viewState === "overview" && data && (
+          <OverviewPage data={data} onSourceItemClick={onSourceItemClick} />
+        )}
+      </div>
+
+      {/* Breakdown View */}
+      <div
+        className={`transition-opacity duration-300 ease-in-out ${
+          viewState === "breakdown"
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {viewState === "breakdown" && data && sourceItemId && (
+          <BreakdownPage
+            data={data}
+            sourceItemId={sourceItemId}
+            onBackToOverview={onBackToOverview}
+          />
+        )}
+      </div>
     </div>
   );
 }

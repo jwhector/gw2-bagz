@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useCallback,
+} from "react";
 import * as d3 from "d3";
 import type {
   ProcessedItemData,
@@ -22,6 +28,7 @@ export default function SourceItemDivergingBarChart({
     { x: number; y: number } | undefined
   >(undefined);
   const [isOverDonut, setIsOverDonut] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const gRect = useRef(null);
   const gName = useRef(null);
@@ -32,10 +39,17 @@ export default function SourceItemDivergingBarChart({
   const gDefs = useRef(null);
   const gOverlay = useRef(null);
 
-  const sourceItemsArray = Object.values(sourceItems);
-  const sortedData = d3.sort(
-    sourceItemsArray,
-    (a, b) => b.profitFromBuyOrder - a.profitFromBuyOrder
+  const sourceItemsArray = useMemo(
+    () => Object.values(sourceItems),
+    [sourceItems]
+  );
+  const sortedData = useMemo(
+    () =>
+      d3.sort(
+        sourceItemsArray,
+        (a, b) => b.profitFromBuyOrder - a.profitFromBuyOrder
+      ),
+    [sourceItemsArray]
   );
   const barHeight = 25;
   const marginTop = 30;
@@ -67,45 +81,46 @@ export default function SourceItemDivergingBarChart({
     [sortedData, height]
   );
 
-  const handleMouseIn = (
-    event: React.MouseEvent,
-    data: ProcessedSourceItemData
-  ) => {
-    d3.select(gRect.current)
-      .selectAll("rect")
-      .filter((d) => (d as ProcessedSourceItemData).name === data.name)
-      .style("opacity", 0.7);
+  const handleMouseIn = useCallback(
+    (event: React.MouseEvent, data: ProcessedSourceItemData) => {
+      d3.select(gRect.current)
+        .selectAll("rect")
+        .filter((d) => (d as ProcessedSourceItemData).name === data.name)
+        .style("opacity", 0.7);
 
-    d3.select(gName.current)
-      .selectAll("text")
-      .filter((d) => (d as ProcessedSourceItemData).name === data.name)
-      .style("opacity", 0.7);
+      d3.select(gName.current)
+        .selectAll("text")
+        .filter((d) => (d as ProcessedSourceItemData).name === data.name)
+        .style("opacity", 0.7)
+        .on("click", () => onSourceItemClick(data.id));
 
-    d3.select(gValue.current)
-      .selectAll("text")
-      .filter((d) => (d as ProcessedSourceItemData).name === data.name)
-      .style("opacity", 0.7);
+      d3.select(gValue.current)
+        .selectAll("text")
+        .filter((d) => (d as ProcessedSourceItemData).name === data.name)
+        .style("opacity", 0.7);
 
-    // Set the hovered item and position for the donut chart
-    setHoveredItem(data);
+      // Set the hovered item and position for the donut chart
+      setHoveredItem(data);
 
-    // Position the donut chart relative to the bar
-    // Try to position donut to the right of the bar
-    let xPos = x(Math.max(data.profitFromBuyOrder, 0)) + 50;
+      // Position the donut chart relative to the bar
+      // Try to position donut to the right of the bar
+      let xPos = x(Math.max(data.profitFromBuyOrder, 0)) + 50;
 
-    // If it would go off-screen to the right, position it to the left of the bar
-    if (xPos + 300 > width) {
-      // 300 is the width of our donut chart
-      xPos = x(Math.min(data.profitFromBuyOrder, 0)) - 300 - 50;
-    }
+      // If it would go off-screen to the right, position it to the left of the bar
+      if (xPos + 300 > width) {
+        // 300 is the width of our donut chart
+        xPos = x(Math.min(data.profitFromBuyOrder, 0)) - 300 - 50;
+      }
 
-    setDonutPosition({
-      x: xPos,
-      y: y(data.name)! - 300 / 2 + barHeight / 2, // 300 is the height of our donut chart
-    });
-  };
+      setDonutPosition({
+        x: xPos,
+        y: y(data.name)! - 300 / 2 + barHeight / 2, // 300 is the height of our donut chart
+      });
+    },
+    [x, y, width, onSourceItemClick]
+  );
 
-  const handleMouseOut = () => {
+  const handleMouseOut = useCallback(() => {
     // Only hide everything if we're not over the donut chart
     d3.select(gRect.current).selectAll("rect").style("opacity", 1);
 
@@ -117,13 +132,13 @@ export default function SourceItemDivergingBarChart({
       setHoveredItem(null);
       setDonutPosition(undefined);
     }
-  };
+  }, [isOverDonut]);
 
-  const handleDonutMouseEnter = () => {
+  const handleDonutMouseEnter = useCallback(() => {
     setIsOverDonut(true);
-  };
+  }, []);
 
-  const handleDonutMouseLeave = () => {
+  const handleDonutMouseLeave = useCallback(() => {
     setIsOverDonut(false);
     d3.select(gRect.current).selectAll("rect").style("opacity", 1);
 
@@ -133,9 +148,9 @@ export default function SourceItemDivergingBarChart({
 
     setHoveredItem(null);
     setDonutPosition(undefined);
-  };
+  }, []);
 
-  // Draw the diverging bar chart
+  // Initial chart setup - only run once when data changes
   useEffect(() => {
     console.log("Drawing diverging bar chart");
     // Create pattern definitions for diagonal stripes
@@ -248,13 +263,18 @@ export default function SourceItemDivergingBarChart({
       .attr("text-anchor", (d) => (d.profitFromBuyOrder > 0 ? "start" : "end"))
       .attr(
         "x",
-        (d) => x(d.profitFromBuyOrder) + (d.profitFromBuyOrder > 0 ? 10 : -10)
+        (d) => x(0) + (d.profitFromBuyOrder > 0 ? 10 : -10)
       )
       .attr("y", (d) => y(d.name)! + y.bandwidth() / 2)
       .attr("dy", "0.35em");
-  }, [sortedData, x, y, onSourceItemClick]);
 
+    setIsInitialized(true);
+  }, [sortedData, x, y]); // Remove onSourceItemClick to prevent unnecessary rerenders
+
+  // Setup mouse event listeners
   useEffect(() => {
+    if (!isInitialized) return;
+
     d3.select(gOverlay.current)
       .selectAll("rect")
       .data(sortedData)
@@ -262,57 +282,51 @@ export default function SourceItemDivergingBarChart({
       .attr("width", () => SVG_WIDTH)
       .attr("height", () => barHeight)
       .attr("y", (d) => y(d.name)!)
-      // .attr("fill", "none")
+      .attr("fill", "none")
+      .attr("cursor", "pointer")
+      .attr("pointer-events", "all")
       .on("mouseover", (event, d) => handleMouseIn(event, d))
-      .on("mouseout", handleMouseOut);
-  }, [sortedData, x, y]);
+      .on("mouseout", handleMouseOut)
+      .on("click", (event, d) => onSourceItemClick(d.id));
+  }, [sortedData, y, handleMouseIn, handleMouseOut, isInitialized, onSourceItemClick]);
 
+  // Animate the bars
   useEffect(() => {
-    // if (!gRect.current) return;
+    if (!isInitialized) return;
 
-    // if (showPieChart) {
-    //   d3.select(gRect.current)
-    //     .selectAll("rect")
-    //     .transition()
-    //     .duration(750)
-    //     .attr("x", () => x(0))
-    //     .attr("width", 0);
-    //   d3.select(gContainer.current)
-    //     .transition()
-    //     .duration(750)
-    //     .style("opacity", 0)
-    //     .end()
-    //     .then(() => {
-    //       d3.select(gContainer.current).style("display", "none");
-    //     });
-    //   d3.select(gImg.current)
-    //     .selectAll("image")
-    //     .filter((d) => (d as ProcessedSourceItemData).id !== selectedItem?.id)
-    //     .transition()
-    //     .duration(750)
-    //     .style("opacity", 0)
-    //     .end()
-    //     .then(() => {
-    //       d3.select(gImg.current)
-    //         .selectAll("image")
-    //         .filter(
-    //           (d) => (d as ProcessedSourceItemData).id !== selectedItem?.id
-    //         )
-    //         .style("display", "none");
-    //     });
-    // } else {
-      d3.select(gRect.current)
-        .selectAll("rect")
-        .transition()
-        .duration(750)
-        .attr("x", (d) =>
-          x(Math.min((d as ProcessedSourceItemData).profitFromBuyOrder, 0))
-        )
-        .attr("width", (d) =>
-          Math.abs(x((d as ProcessedSourceItemData).profitFromBuyOrder) - x(0))
-        );
-    // }
-  }, [sortedData, x, y]);
+    d3.select(gRect.current)
+      .selectAll("rect")
+      .transition()
+      .duration(750)
+      .attr("x", (d) =>
+        x(Math.min((d as ProcessedSourceItemData).profitFromBuyOrder, 0))
+      )
+      .attr("width", (d) =>
+        Math.abs(x((d as ProcessedSourceItemData).profitFromBuyOrder) - x(0))
+      );
+
+    d3.select(gRect.current)
+      .selectAll(".pattern-overlay")
+      .transition()
+      .duration(750)
+      .attr("x", (d) =>
+        x(Math.min((d as ProcessedSourceItemData).profitFromBuyOrder, 0))
+      )
+      .attr("width", (d) =>
+        Math.abs(x((d as ProcessedSourceItemData).profitFromBuyOrder) - x(0))
+      );
+
+    d3.select(gValue.current)
+      .selectAll("text")
+      .transition()
+      .duration(750)
+      .attr(
+        "x",
+        (d) =>
+          x((d as ProcessedSourceItemData).profitFromBuyOrder) +
+          ((d as ProcessedSourceItemData).profitFromBuyOrder > 0 ? 10 : -10)
+      );
+  }, [sortedData, x, isInitialized]);
 
   return (
     <div style={{ position: "relative" }}>
@@ -324,10 +338,10 @@ export default function SourceItemDivergingBarChart({
             <g ref={gName}></g>
             <g ref={gValue}></g>
           </g>
+          <g ref={gImg}></g>
           <g ref={gAxis}></g>
           <g ref={gOverlay}></g>
         </g>
-        <g ref={gImg}></g>
       </svg>
 
       <SourceItemDonutChart
