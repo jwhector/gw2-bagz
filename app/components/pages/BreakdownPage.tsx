@@ -32,12 +32,12 @@ export default function BreakdownPage({
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header with back button */}
-      <div className="p-6 border-b">
+      <div className="p-4 sm:p-6">
         <button
           onClick={onBackToOverview}
-          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+          className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
         >
           <svg
             className="w-4 h-4"
@@ -57,156 +57,186 @@ export default function BreakdownPage({
       </div>
 
       {/* Main breakdown layout */}
-      <div className="flex min-h-[calc(100vh-64px)]">
+      <div className="flex flex-col lg:flex-row gap-6 p-4 sm:p-6 pt-0">
         {/* Left sidebar - Source item stats */}
-        <div className="w-1/3 p-6 border-r bg-gray-50 fixed left-0 top-[64px] h-[calc(100vh-64px)] overflow-y-auto">
-          {/* Item Header with Icon and Name */}
-          <div className="flex items-center gap-4 mb-8">
-            <div className="relative">
-              <Image
-                src={sourceItem.icon}
-                alt={sourceItem.name}
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-lg shadow-md"
-              />
-              <div
-                className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
-                  sourceItem.rarity === "Exotic"
-                    ? "bg-orange-500"
-                    : sourceItem.rarity === "Rare"
-                    ? "bg-yellow-500"
-                    : sourceItem.rarity === "Masterwork"
-                    ? "bg-green-500"
-                    : sourceItem.rarity === "Fine"
-                    ? "bg-blue-500"
-                    : "bg-gray-500"
-                }`}
-              ></div>
+        <div className="lg:w-1/3 lg:max-w-md">
+          <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-slate-700/50 p-6 transition-all duration-300 hover:shadow-slate-900/50 hover:shadow-2xl hover:bg-slate-800/90 sticky top-6">
+            {/* Item Header with Icon and Name */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative">
+                <Image
+                  src={sourceItem.icon}
+                  alt={sourceItem.name}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 rounded-xl shadow-lg"
+                />
+                <div
+                  className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-slate-800 shadow-sm ${
+                    sourceItem.rarity === "Exotic"
+                      ? "bg-orange-400"
+                      : sourceItem.rarity === "Rare"
+                      ? "bg-yellow-400"
+                      : sourceItem.rarity === "Masterwork"
+                      ? "bg-emerald-400"
+                      : sourceItem.rarity === "Fine"
+                      ? "bg-blue-400"
+                      : "bg-slate-400"
+                  }`}
+                ></div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-slate-100 leading-tight">
+                  {sourceItem.name}
+                </h3>
+                <p className="text-sm text-slate-300 capitalize font-medium">
+                  {sourceItem.rarity}
+                </p>
+              </div>
             </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-800 leading-tight">
-                {sourceItem.name}
-              </h3>
-              <p className="text-sm text-gray-600 capitalize font-medium">
-                {sourceItem.rarity}
-              </p>
-            </div>
-          </div>
 
-          {/* Trading Post Values */}
-          <div className="space-y-4 mb-8">
-            <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border border-green-200 shadow-sm">
+            {/* Trading Post Values */}
+            <div className="space-y-4 mb-6">
+              <div className="bg-gradient-to-r from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-slate-300">
+                    Buy Orders
+                  </span>
+                  <span className="text-lg font-bold text-emerald-400">
+                    {formatCurrency(sourceItem.buys.unit_price)}
+                  </span>
+                </div>
+                <div className="text-xs text-slate-400">
+                  {sourceItem.buys.quantity.toLocaleString()} available
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-slate-300">
+                    Sell Orders
+                  </span>
+                  <span className="text-lg font-bold text-blue-400">
+                    {formatCurrency(sourceItem.sells.unit_price)}
+                  </span>
+                </div>
+                <div className="text-xs text-slate-400">
+                  {sourceItem.sells.quantity.toLocaleString()} available
+                </div>
+              </div>
+            </div>
+
+            {/* Expected Value */}
+            <div className="bg-gradient-to-r from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner mb-6">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-green-800">
-                  Buy Orders
+                <span className="text-sm font-medium text-slate-300">
+                  Expected Value
                 </span>
-                <span className="text-lg font-bold text-green-700">
-                  {formatCurrency(sourceItem.buys.unit_price)}
-                </span>
-              </div>
-              <div className="text-xs text-green-600">
-                {sourceItem.buys.quantity.toLocaleString()} available
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-red-50 to-red-100 rounded-lg p-4 border border-red-200 shadow-sm">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-red-800">
-                  Sell Orders
-                </span>
-                <span className="text-lg font-bold text-red-700">
-                  {formatCurrency(sourceItem.sells.unit_price)}
+                <span className="text-lg font-bold text-slate-100">
+                  {formatCurrency(sourceItem.contentsValue)}
                 </span>
               </div>
-              <div className="text-xs text-red-600">
-                {sourceItem.sells.quantity.toLocaleString()} available
-              </div>
-            </div>
-          </div>
-
-          {/* Expected Value */}
-          <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200 shadow-sm mb-8">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium text-purple-800">
-                Expected Value
-              </span>
-              <span className="text-lg font-bold text-purple-700">
-                {formatCurrency(sourceItem.contentsValue)}
-              </span>
-            </div>
-            <div className="text-xs text-purple-600">
-              From opening container
-            </div>
-          </div>
-
-          {/* Profit Analysis */}
-          <div className="grid grid-cols-2 gap-3 mb-8">
-            <div className="bg-blue-50 rounded-lg p-3 border border-blue-200 shadow-sm">
-              <div className="text-xs font-medium text-blue-800 mb-1">
-                Profit (Buy)
-              </div>
-              <div
-                className={`text-sm font-bold ${
-                  sourceItem.profitFromBuyOrder >= 0
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {sourceItem.profitFromBuyOrder >= 0 ? "+" : ""}
-                {formatCurrency(sourceItem.profitFromBuyOrder)}
-              </div>
-              <div className="text-xs text-blue-600">
-                {sourceItem.profitMarginFromBuy}% margin
+              <div className="text-xs text-slate-400">
+                From opening container
               </div>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-3 border border-orange-200 shadow-sm">
-              <div className="text-xs font-medium text-orange-800 mb-1">
-                Profit (Sell)
+            {/* Profit Analysis */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="bg-gradient-to-br from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <div className="text-xs font-medium text-slate-300 mb-2">
+                  Profit (Buy)
+                </div>
+                <div
+                  className={`text-sm font-bold ${
+                    sourceItem.profitFromBuyOrder >= 0
+                      ? "text-emerald-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  {sourceItem.profitFromBuyOrder >= 0 ? "+" : ""}
+                  {formatCurrency(sourceItem.profitFromBuyOrder)}
+                </div>
+                <div className="text-xs text-slate-400 mt-1">
+                  {sourceItem.profitMarginFromBuy}% margin
+                </div>
               </div>
-              <div
-                className={`text-sm font-bold ${
-                  sourceItem.profitFromSellOrder >= 0
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {sourceItem.profitFromSellOrder >= 0 ? "+" : ""}
-                {formatCurrency(sourceItem.profitFromSellOrder)}
-              </div>
-              <div className="text-xs text-orange-600">
-                {sourceItem.profitMarginFromSell}% margin
-              </div>
-            </div>
-          </div>
 
-          {/* Container Contents Count */}
-          <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
-            <div className="flex justify-between items-center">
-              <span className="text-sm font-medium text-gray-700">
-                Container Contents
-              </span>
-              <span className="text-lg font-bold text-gray-800">
-                {sourceItem.contents.length} items
-              </span>
+              <div className="bg-gradient-to-br from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <div className="text-xs font-medium text-slate-300 mb-2">
+                  Profit (Sell)
+                </div>
+                <div
+                  className={`text-sm font-bold ${
+                    sourceItem.profitFromSellOrder >= 0
+                      ? "text-emerald-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  {sourceItem.profitFromSellOrder >= 0 ? "+" : ""}
+                  {formatCurrency(sourceItem.profitFromSellOrder)}
+                </div>
+                <div className="text-xs text-slate-400 mt-1">
+                  {sourceItem.profitMarginFromSell}% margin
+                </div>
+              </div>
             </div>
-            <div className="text-xs text-gray-600 mt-1">
-              Sample size: {sourceItem.sampleSize.toLocaleString()} containers
+
+            {/* Container Contents Count */}
+            <div className="bg-gradient-to-r from-slate-900/60 to-slate-800/60 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium text-slate-300">
+                  Container Contents
+                </span>
+                <span className="text-lg font-bold text-slate-100">
+                  {sourceItem.contents.length} items
+                </span>
+              </div>
+              <div className="text-xs text-slate-400 mt-2">
+                Sample size: {sourceItem.sampleSize.toLocaleString()} containers
+              </div>
             </div>
           </div>
         </div>
 
         {/* Right content - Container contents */}
-        <div className="flex-1 p-6 ml-[33.333333%] overflow-y-auto">
-          <h2 className="text-xl font-semibold mb-6">Container Contents</h2>
+        <div className="flex-1 lg:max-w-4xl">
+          {/* Header Section */}
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
+              Container Contents Analysis
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg">
+              Detailed breakdown of items found in {sourceItem.name}
+            </p>
+            <div className="mt-3 mx-auto h-1 w-24 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
+          </div>
+
+          {/* Charts Container */}
           <div className="space-y-6">
-            <ResultItemBarChart
-              sourceItemData={data.sourceItems[sourceItemId]}
-            />
-            <ResultItemScatterPlot
-              sourceItemData={data.sourceItems[sourceItemId]}
-            />
+            {/* Bar Chart Container */}
+            <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-slate-700/50 p-6 transition-all duration-300 hover:shadow-slate-900/50 hover:shadow-2xl hover:bg-slate-800/90">
+              <h3 className="text-lg font-semibold text-slate-100 mb-4">
+                Item Value Distribution
+              </h3>
+              <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <ResultItemBarChart
+                  sourceItemData={data.sourceItems[sourceItemId]}
+                />
+              </div>
+            </div>
+
+            {/* Scatter Plot Container */}
+            <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-slate-700/50 p-6 transition-all duration-300 hover:shadow-slate-900/50 hover:shadow-2xl hover:bg-slate-800/90">
+              <h3 className="text-lg font-semibold text-slate-100 mb-4">
+                Drop Rate vs Value Analysis
+              </h3>
+              <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/50 rounded-xl p-4 border border-slate-600/30 shadow-inner">
+                <ResultItemScatterPlot
+                  sourceItemData={data.sourceItems[sourceItemId]}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

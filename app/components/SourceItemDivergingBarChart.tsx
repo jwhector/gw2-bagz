@@ -12,15 +12,17 @@ import type {
 } from "../api/lib/types";
 import SourceItemDonutChart from "./SourceItemDonutChart";
 
-const SVG_WIDTH = 700;
+interface SourceItemDivergingBarChartProps {
+  data: ProcessedItemData;
+  onSourceItemClick: (sourceItemId: number) => void;
+  width?: number;
+}
 
 export default function SourceItemDivergingBarChart({
   data,
   onSourceItemClick,
-}: {
-  data: ProcessedItemData;
-  onSourceItemClick: (sourceItemId: number) => void;
-}) {
+  width = 700,
+}: SourceItemDivergingBarChartProps) {
   const { sourceItems } = data;
   const [hoveredItem, setHoveredItem] =
     useState<ProcessedSourceItemData | null>(null);
@@ -52,13 +54,12 @@ export default function SourceItemDivergingBarChart({
     [sourceItemsArray]
   );
   const barHeight = 25;
-  const marginTop = 30;
+  const marginTop = 10;
   const marginRight = 60;
   const marginBottom = 10;
   const marginLeft = 60;
   const height =
     Math.ceil((sortedData.length + 0.1) * barHeight) + marginTop + marginBottom;
-  const width = 700;
 
   const x = useMemo(
     () =>
@@ -68,7 +69,7 @@ export default function SourceItemDivergingBarChart({
           d3.extent(sortedData, (d) => d.profitFromBuyOrder) as [number, number]
         )
         .rangeRound([marginLeft, width - marginRight]),
-    [sortedData]
+    [sortedData, width]
   );
 
   const y = useMemo(
@@ -261,10 +262,7 @@ export default function SourceItemDivergingBarChart({
       .join("text")
       .text((d) => d3.format("+.1f")(d.profitFromBuyOrder))
       .attr("text-anchor", (d) => (d.profitFromBuyOrder > 0 ? "start" : "end"))
-      .attr(
-        "x",
-        (d) => x(0) + (d.profitFromBuyOrder > 0 ? 10 : -10)
-      )
+      .attr("x", (d) => x(0) + (d.profitFromBuyOrder > 0 ? 10 : -10))
       .attr("y", (d) => y(d.name)! + y.bandwidth() / 2)
       .attr("dy", "0.35em");
 
@@ -279,7 +277,7 @@ export default function SourceItemDivergingBarChart({
       .selectAll("rect")
       .data(sortedData)
       .join("rect")
-      .attr("width", () => SVG_WIDTH)
+      .attr("width", () => width)
       .attr("height", () => barHeight)
       .attr("y", (d) => y(d.name)!)
       .attr("fill", "none")
@@ -288,7 +286,15 @@ export default function SourceItemDivergingBarChart({
       .on("mouseover", (event, d) => handleMouseIn(event, d))
       .on("mouseout", handleMouseOut)
       .on("click", (event, d) => onSourceItemClick(d.id));
-  }, [sortedData, y, handleMouseIn, handleMouseOut, isInitialized, onSourceItemClick]);
+  }, [
+    sortedData,
+    y,
+    handleMouseIn,
+    handleMouseOut,
+    isInitialized,
+    onSourceItemClick,
+    width,
+  ]);
 
   // Animate the bars
   useEffect(() => {
