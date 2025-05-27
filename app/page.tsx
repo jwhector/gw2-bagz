@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import OverviewPage from "./components/pages/OverviewPage";
 import BreakdownPage from "./components/pages/BreakdownPage";
@@ -7,7 +7,8 @@ import type { ProcessedItemData } from "./api/lib/types";
 
 type ViewState = "overview" | "breakdown" | "transitioning";
 
-export default function Home() {
+// Separate component that uses useSearchParams
+function PageContent() {
   const [data, setData] = useState<ProcessedItemData | null>(null);
   const [viewState, setViewState] = useState<ViewState>("overview");
   const router = useRouter();
@@ -89,5 +90,22 @@ export default function Home() {
         )}
       </div>
     </div>
+  );
+}
+
+// Loading component for Suspense fallback
+function PageLoading() {
+  return (
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex items-center justify-center">
+      <div className="text-lg">Loading...</div>
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<PageLoading />}>
+      <PageContent />
+    </Suspense>
   );
 }
