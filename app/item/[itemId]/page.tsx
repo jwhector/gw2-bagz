@@ -71,47 +71,37 @@ export default function SourceItemPage({
 
   // Format price for better readability
   const formatPrice = (price: number) => {
-    const absPrice = Math.abs(price)
+    const absPrice = Math.abs(price);
     const gold = Math.floor(absPrice / 10000);
     const silver = Math.floor((absPrice % 10000) / 100);
     const copper = Math.floor(absPrice % 100);
 
     return (
       <span className="flex items-center gap-1">
-        {price < 0 && (
-          <span className="text-red-500">
-            -
+        {price < 0 && <span className="text-red-500">-</span>}
+        {gold > 0 && (
+          <span className="flex items-center gap-1">
+            <span>{gold}</span>
+            <span className="w-4 h-4 rounded-full bg-yellow-400 border border-yellow-600"></span>
           </span>
         )}
-        {
-          gold > 0 && (
-            <span className="flex items-center gap-1">
-              <span>{gold}</span>
-              <span className="w-4 h-4 rounded-full bg-yellow-400 border border-yellow-600"></span>
-            </span>
-          )
-        }
-        {
-          silver > 0 && (
-            <span className="flex items-center gap-1">
-              <span>{silver}</span>
-              <span className="w-4 h-4 rounded-full bg-gray-300 border border-gray-400"></span>
-            </span>
-          )
-        }
-        {
-          copper > 0 && (
-            <span className="flex items-center gap-1">
-              <span>{copper}</span>
-              <span className="w-4 h-4 rounded-full bg-amber-700 border border-amber-800"></span>
-            </span>
-          )
-        }
+        {silver > 0 && (
+          <span className="flex items-center gap-1">
+            <span>{silver}</span>
+            <span className="w-4 h-4 rounded-full bg-gray-300 border border-gray-400"></span>
+          </span>
+        )}
+        {copper > 0 && (
+          <span className="flex items-center gap-1">
+            <span>{copper}</span>
+            <span className="w-4 h-4 rounded-full bg-amber-700 border border-amber-800"></span>
+          </span>
+        )}
       </span>
     );
   };
 
-  console.log(sourceItem)
+  console.log(sourceItem);
 
   return (
     <div className="min-h-screen p-6">

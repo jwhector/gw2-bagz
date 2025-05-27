@@ -48,10 +48,10 @@ function PageContent() {
     } else {
       setViewState("overview");
     }
-  }, []);
+  }, [sourceItemId]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/items/test").then((res) => {
+    fetch("/api/items/test").then((res) => {
       if (res.ok) {
         res.json().then(setData);
       }
